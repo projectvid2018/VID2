@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.explorer.vid">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".vid.Activity.NidActivity" />
+        <activity android:name=".vid.Activity.InfoActivity" />
+        <activity android:name=".vid.Activity.EduActivity" />
+        <activity android:name=".vid.Activity.DrivingActivity" />
+        <activity android:name=".vid.Activity.PassportActivity" />
+        <activity android:name=".vid.Activity.VisaActivity" />
+        <activity android:name=".vid.Activity.HajjActivity" />
+        <activity android:name=".vid.Activity.PropertiesActivity" />
+        <activity android:name=".vid.Activity.LawActivity" />
+        <activity android:name=".vid.Activity.EcActivity" />
+        <activity android:name=".vid.Activity.PoliceActivity" />
+        <activity android:name=".vid.Activity.MarriageActivity" />
+        <activity android:name=".vid.Activity.BirthActivity" />
+        <activity android:name=".vid.Activity.TaxActivity" />
+        <activity android:name=".vid.Activity.BankActivity" />
+        <activity android:name=".vid.Activity.InsuranceActivity" />
+        <activity android:name=".vid.Activity.SocialActivity" />
+        <activity android:name=".vid.Activity.OthersActivity" />
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".vid.Activity.ForgotpassActivity" />
+        <activity android:name=".vid.Activity.HomeActivity" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".vid.Activity.HomeActivity"
+            android:theme="@style/Base.V21.Theme.AppCompat.Light">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.explorer.vid.vid.Activity.HomeActivity" />
+        </activity>
+        <activity android:name=".vid.Activity.AboutActivity" />
+        <activity android:name=".vid.Activity.FeedbackActivity"></activity>
+
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+</manifest>

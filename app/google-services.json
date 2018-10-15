@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "111102401811",
+    "firebase_url": "https://vid2-1a841.firebaseio.com",
+    "project_id": "vid2-1a841",
+    "storage_bucket": "vid2-1a841.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111102401811:android:8a405ae1dc7e7426",
+        "android_client_info": {
+          "package_name": "com.example.explorer.vid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111102401811-3epuh371dq95eihup55bo0dv77rd4o6h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAagi2OwR72IZEBS-ngt7DOQK8WlQQ8Iyk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

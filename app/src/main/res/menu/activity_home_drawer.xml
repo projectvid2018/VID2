@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_notification"
+            android:icon="@drawable/ic_bell"
+            android:title="Notifications" />
+        <item
+            android:id="@+id/nav_saved_files"
+            android:icon="@drawable/ic_save"
+            android:title="Saved files" />
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_about"
+                android:checkable="true"
+                android:icon="@drawable/ic_info"
+                android:title="About" />
+            <item
+                android:id="@+id/nav_feedback"
+                android:checkable="true"
+                android:icon="@drawable/ic_feedback"
+                android:title="Feedback" />
+            <item
+                android:id="@+id/nav_web"
+                android:checkable="true"
+                android:icon="@drawable/ic_web"
+                android:title="Website" />
+
+            <item
+                android:id="@+id/nav_logout"
+                android:checkable="true"
+                android:icon="@drawable/ic_exit"
+                android:title="Log out" />
+
+        </menu>
+    </item>
+
+</menu>
