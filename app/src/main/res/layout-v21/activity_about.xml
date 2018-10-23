@@ -18,7 +18,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/md_deep_orange_400"
             android:orientation="horizontal"
             >
             <ImageView
@@ -33,7 +32,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center_vertical"
+                
+                android:gravity="left"
                 android:text="@string/about"
                 android:textColor="@color/White"
                 android:textSize="30sp"
@@ -41,6 +41,10 @@
             
             
         </LinearLayout>
+
+ 
+
+
 
     </android.support.v7.widget.CardView>
 

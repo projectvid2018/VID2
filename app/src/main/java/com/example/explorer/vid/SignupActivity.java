@@ -89,7 +89,9 @@ public class SignupActivity extends AppCompatActivity {
                 int month=cal.get(Calendar.MONTH);
                 int day=cal.get(Calendar.DAY_OF_MONTH);
 
-                DatePickerDialog dialog=new DatePickerDialog(SignupActivity.this,android.R.style.Theme_Holo_Light_Dialog_MinWidth, mDatesetListener,year,month,day);
+                DatePickerDialog dialog=new DatePickerDialog(SignupActivity.this
+                        ,android.R.style.Theme_Holo_Light_Dialog_MinWidth
+                        ,mDatesetListener,year,month,day);
 
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
