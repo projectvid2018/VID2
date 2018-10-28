@@ -8,7 +8,7 @@
     android:background="@color/Wheat"
     android:orientation="vertical"
     android:theme="@style/Theme.Design.Light.NoActionBar"
-    tools:context="com.example.explorer.vid.SignupActivity">
+    tools:context="com.example.explorer.vid.start.activity.SignupActivity">
 
 
     <ScrollView
@@ -17,7 +17,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
             android:layout_marginBottom="50dp"
@@ -127,7 +127,7 @@
                     android:id="@+id/tv1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Sign Up"
+                    android:text="@string/sign_up"
                     android:textColor="#000000"
                     android:textSize="25sp"
                     android:textStyle="bold"

@@ -16,8 +16,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 
+import com.example.explorer.vid.nav.activity.AboutActivity;
 import com.example.explorer.vid.R;
-import com.example.explorer.vid.SettingsActivity;
+import com.example.explorer.vid.nav.activity.SettingsActivity;
+import com.example.explorer.vid.nav.activity.FeedbackActivity;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

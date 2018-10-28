@@ -15,7 +15,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@color/Wheat">
 
@@ -23,8 +23,8 @@
         <ScrollView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
-            android:paddingRight="8dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="8dp"
             android:paddingBottom="0dp">
 
             <LinearLayout
@@ -41,7 +41,7 @@
                     android:weightSum="3"
                     android:layout_weight="1"
                     android:layout_marginBottom="5dp"
-                    >
+                    android:baselineAligned="false">
                     <!-- ** NID ** -->
                     <LinearLayout
                         android:layout_width="0dp"
@@ -55,17 +55,18 @@
                         android:clickable="true"
                         android:contextClickable="true"
                         android:longClickable="true"
-                        android:onClick="nid">
+                        android:onClick="nid"
+                        android:focusable="true">
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
                             android:src="@drawable/nid"
                             android:layout_gravity="center"
-                            />
+                            android:contentDescription="@string/todo" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
-                            android:text="NID"
+                            android:text="@string/nid"
                             android:gravity="center"
                             android:textSize="15sp"
                             android:textStyle="bold"
@@ -86,17 +87,16 @@
                         android:contextClickable="true"
                         android:longClickable="true"
                         android:onClick="info"
-
-                        >
+                        android:focusable="true">
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
                             android:src="@drawable/info"
-                            />
+                            android:contentDescription="@string/todo" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
-                            android:text="Information"
+                            android:text="@string/information"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textColor="@color/White"
@@ -118,16 +118,16 @@
                         android:contextClickable="true"
                         android:longClickable="true"
                         android:onClick="edu"
-                        >
+                        android:focusable="true">
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
                             android:src="@drawable/edu"
-                            />
+                            android:contentDescription="@string/todo" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
-                            android:text="Education"
+                            android:text="@string/education"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textColor="@color/White"
@@ -146,7 +146,7 @@
                     android:weightSum="3"
                     android:layout_weight="1"
                     android:layout_marginBottom="5dp"
-                    >
+                    android:baselineAligned="false">
                     <!-- ** Driving ** -->
                     <LinearLayout
                         android:layout_width="0dp"
@@ -160,19 +160,19 @@
                         android:contextClickable="true"
                         android:longClickable="true"
                         android:onClick="driving"
-
-                        >
+                        android:focusable="true"
+                        tools:ignore="NestedWeights">
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
                             android:src="@drawable/drive"
                             android:layout_gravity="center"
                             android:padding="3dp"
-                            />
+                            android:contentDescription="@string/todo" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
-                            android:text="Driving"
+                            android:text="@string/driving"
                             android:gravity="center"
                             android:textSize="15sp"
                             android:textStyle="bold"
@@ -193,16 +193,16 @@
                         android:contextClickable="true"
                         android:longClickable="true"
                         android:onClick="passport"
-                        >
+                        android:focusable="true">
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
                             android:src="@drawable/passport"
-                            />
+                            android:contentDescription="@string/todo" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
-                            android:text="Passport"
+                            android:text="@string/passport"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textColor="@color/White"
@@ -225,17 +225,17 @@
                         android:contextClickable="true"
                         android:longClickable="true"
                         android:onClick="visa"
-                        >
+                        android:focusable="true">
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
                             android:src="@drawable/visa"
                             android:padding="5dp"
-                            />
+                            android:contentDescription="@string/todo" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
-                            android:text="Visa"
+                            android:text="@string/visa"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textColor="@color/White"
@@ -254,7 +254,7 @@
                     android:weightSum="3"
                     android:layout_weight="1"
                     android:layout_marginBottom="5dp"
-                    >
+                    android:baselineAligned="false">
                     <!-- ** Hajj ** -->
                     <LinearLayout
                         android:layout_width="0dp"
@@ -268,18 +268,19 @@
                         android:contextClickable="true"
                         android:longClickable="true"
                         android:onClick="hajj"
-                        >
+                        tools:ignore="NestedWeights"
+                        android:focusable="true">
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
                             android:src="@drawable/hajj"
                             android:layout_gravity="center"
                             android:padding="5dp"
-                            />
+                            android:contentDescription="@string/todo" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
-                            android:text="Hajj"
+                            android:text="@string/hajj"
                             android:gravity="center"
                             android:textSize="15sp"
                             android:textStyle="bold"
@@ -300,17 +301,17 @@
                         android:contextClickable="true"
                         android:longClickable="true"
                         android:onClick="properties"
-                        >
+                        android:focusable="true">
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
                             android:src="@drawable/properties"
                             android:padding="4dp"
-                            />
+                            android:contentDescription="@string/todo" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
-                            android:text="Properties"
+                            android:text="@string/properties"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textColor="@color/White"
@@ -332,16 +333,16 @@
                         android:contextClickable="true"
                         android:longClickable="true"
                         android:onClick="law"
-                        >
+                        android:focusable="true">
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
                             android:src="@drawable/law"
-                            />
+                            android:contentDescription="@string/todo" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
-                            android:text="Law"
+                            android:text="@string/law"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textColor="@color/White"
@@ -360,7 +361,7 @@
                     android:weightSum="3"
                     android:layout_weight="1"
                     android:layout_marginBottom="5dp"
-                    >
+                    android:baselineAligned="false">
                     <!-- ** EC ** -->
                     <LinearLayout
                         android:layout_width="0dp"
@@ -374,19 +375,19 @@
                         android:contextClickable="true"
                         android:longClickable="true"
                         android:onClick="ec"
-                        >
+                        android:focusable="true"
+                        tools:ignore="NestedWeights">
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
                             android:src="@drawable/ec"
                             android:layout_gravity="center"
                             android:padding="5dp"
-
-                            />
+                            android:contentDescription="@string/todo" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
-                            android:text="EC"
+                            android:text="@string/ec"
                             android:gravity="center"
                             android:textSize="15sp"
                             android:textStyle="bold"
@@ -404,19 +405,18 @@
                         android:layout_margin="5dp"
                         android:id="@+id/police"
                         android:clickable="true"
-                        android:contextClickable="true"
                         android:longClickable="true"
                         android:onClick="police"
-                        >
+                        android:focusable="true">
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
                             android:src="@drawable/police"
-                            />
+                            android:contentDescription="@string/todo" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
-                            android:text="Police"
+                            android:text="@string/police"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textColor="@color/White"
@@ -435,19 +435,18 @@
                         android:layout_margin="5dp"
                         android:id="@+id/marriage"
                         android:clickable="true"
-                        android:contextClickable="true"
                         android:longClickable="true"
                         android:onClick="marriage"
-                        >
+                        android:focusable="true">
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
                             android:src="@drawable/marriage"
-                            />
+                            android:contentDescription="@string/todo" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
-                            android:text="Marriage"
+                            android:text="@string/marriage"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textColor="@color/White"
@@ -467,7 +466,7 @@
                     android:weightSum="3"
                     android:layout_weight="1"
                     android:layout_marginBottom="5dp"
-                    >
+                    android:baselineAligned="false">
                     <!-- ** TAX ** -->
                     <LinearLayout
                         android:layout_width="0dp"
@@ -481,17 +480,18 @@
                         android:contextClickable="true"
                         android:longClickable="true"
                         android:onClick="tax"
-                        >
+                        tools:ignore="NestedWeights"
+                        android:focusable="true">
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
                             android:src="@drawable/tax"
                             android:layout_gravity="center"
-                            />
+                            android:contentDescription="@string/todo" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
-                            android:text="Tax"
+                            android:text="@string/tax"
                             android:gravity="center"
                             android:textSize="15sp"
                             android:textStyle="bold"
@@ -512,16 +512,16 @@
                         android:contextClickable="true"
                         android:longClickable="true"
                         android:onClick="bank"
-                        >
+                        android:focusable="true">
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
                             android:src="@drawable/bank"
-                            />
+                            android:contentDescription="@string/todo" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
-                            android:text="Bank"
+                            android:text="@string/bank"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textColor="@color/White"
@@ -543,16 +543,16 @@
                         android:contextClickable="true"
                         android:longClickable="true"
                         android:onClick="insurance"
-                        >
+                        android:focusable="true">
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
                             android:src="@drawable/insurance"
-                            />
+                            android:contentDescription="@string/todo" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
-                            android:text="Insurance"
+                            android:text="@string/insurance"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textColor="@color/White"
@@ -571,8 +571,8 @@
                     android:orientation="horizontal"
                     android:weightSum="3"
                     android:layout_weight="1"
-                    android:layout_marginBottom="30dp"
-                    >
+                    android:layout_marginBottom="5dp"
+                    android:baselineAligned="false">
                     <!-- ** Birth Certificate ** -->
                     <LinearLayout
                         android:layout_width="0dp"
@@ -586,19 +586,20 @@
                         android:contextClickable="true"
                         android:longClickable="true"
                         android:onClick="birth"
-                        >
+                        android:focusable="true"
+                        tools:ignore="NestedWeights">
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
                             android:src="@drawable/birth"
                             android:layout_gravity="center"
-
+                            android:contentDescription="@string/todo"
                             />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
-                            android:text="Birth"
+                            android:text="@string/birth"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textColor="@color/White"
@@ -619,18 +620,17 @@
                         android:contextClickable="true"
                         android:longClickable="true"
                         android:onClick="social"
-                        >
+                        android:focusable="true">
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
                             android:src="@drawable/sco"
                             android:padding="5dp"
-
-                            />
+                            android:contentDescription="@string/todo" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
-                            android:text="Social"
+                            android:text="@string/social"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textColor="@color/White"
@@ -652,18 +652,17 @@
                         android:contextClickable="true"
                         android:longClickable="true"
                         android:onClick="others"
-                        >
+                        android:focusable="true">
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
                             android:src="@drawable/others"
                             android:padding="5dp"
-
-                            />
+                            android:contentDescription="@string/todo" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
-                            android:text="Others"
+                            android:text="@string/others"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textColor="@color/White"

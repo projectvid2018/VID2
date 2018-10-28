@@ -1,10 +1,9 @@
-package com.example.explorer.vid;
+package com.example.explorer.vid.start.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.explorer.vid.LoginActivity;
 import com.example.explorer.vid.R;
 
 public class SplashScreen extends Activity implements Runnable

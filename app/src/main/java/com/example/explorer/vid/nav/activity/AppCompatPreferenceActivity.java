@@ -1,4 +1,4 @@
-package com.example.explorer.vid;
+package com.example.explorer.vid.nav.activity;
 
 import android.content.res.Configuration;
 import android.os.Bundle;

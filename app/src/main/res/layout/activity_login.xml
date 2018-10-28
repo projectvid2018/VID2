@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:background="@color/Wheat"
     android:theme="@style/Base.Theme.AppCompat.Light"
-    tools:context="com.example.explorer.vid.LoginActivity">
+    tools:context="com.example.explorer.vid.start.activity.LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

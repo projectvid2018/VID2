@@ -1,4 +1,4 @@
-package com.example.explorer.vid;
+package com.example.explorer.vid.start.activity;
 
 public class People {
 

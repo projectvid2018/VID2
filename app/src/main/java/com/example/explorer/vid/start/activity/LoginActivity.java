@@ -1,4 +1,4 @@
-package com.example.explorer.vid;
+package com.example.explorer.vid.start.activity;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.explorer.vid.R;
 import com.example.explorer.vid.vid.Activity.ForgotpassActivity;
 import com.example.explorer.vid.vid.Activity.HomeActivity;
 import com.google.android.gms.tasks.OnCompleteListener;

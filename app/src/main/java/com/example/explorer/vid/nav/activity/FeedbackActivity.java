@@ -1,4 +1,4 @@
-package com.example.explorer.vid.vid.Activity;
+package com.example.explorer.vid.nav.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
