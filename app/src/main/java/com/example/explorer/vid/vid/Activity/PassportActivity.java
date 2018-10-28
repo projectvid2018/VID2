@@ -8,6 +8,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.explorer.vid.R;
 import com.google.firebase.database.DataSnapshot;
@@ -96,6 +97,7 @@ public class PassportActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(getApplicationContext(),"Something is wrong",Toast.LENGTH_LONG).show();
 
             }
         });

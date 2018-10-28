@@ -131,4 +131,20 @@
     <string name="date_of_expiry">Date of Expiry:</string>
     <string name="personal_no">Personal No:</string>
     <string name="na">NA</string>
+    <string name="school_name">School Name:</string>
+    <string name="ssc">SSC:</string>
+    <string name="hsc">HSC:</string>
+    <string name="honers_bsc">Honers/BSC</string>
+    <string name="roll">Roll:</string>
+    <string name="registration">Registration:</string>
+    <string name="year">Year:</string>
+    <string name="session">Session:</string>
+    <string name="result">Result:</string>
+    <string name="board">Board:</string>
+    <string name="group">Group:</string>
+    <string name="collage_name">Collage Name:</string>
+    <string name="passing_year">Passing Year:</string>
+    <string name="name_of_university">Name of University:</string>
+    <string name="department">Department:</string>
+    <string name="id">ID:</string>
 </resources>
