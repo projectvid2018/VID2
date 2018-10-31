@@ -8,13 +8,15 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".vid.Activity.InfoActivity">
+        <activity android:name=".vid.Activity.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,17 +25,18 @@
         </activity>
         <activity android:name=".vid.Activity.NidActivity" />
         <activity android:name=".start.activity.SplashScreen" />
-        <activity android:name=".vid.Activity.EduActivity" />
+        <activity android:name=".vid.Activity.InfoActivity" />
         <activity android:name=".vid.Activity.DrivingActivity" />
         <activity android:name=".vid.Activity.PassportActivity" />
         <activity android:name=".vid.Activity.VisaActivity" />
         <activity android:name=".vid.Activity.HajjActivity" />
         <activity android:name=".vid.Activity.PropertiesActivity" />
-        <activity android:name=".vid.Activity.LawActivity" />
+        <activity android:name=".vid.Activity.LawActivity"
+            android:parentActivityName=".vid.Activity.HomeActivity" />
         <activity android:name=".vid.Activity.EcActivity" />
         <activity android:name=".vid.Activity.PoliceActivity" />
         <activity android:name=".vid.Activity.MarriageActivity" />
-        <activity android:name=".vid.Activity.BirthActivity" />
+        <activity android:name=".vid.Activity.EduActivity" />
         <activity android:name=".vid.Activity.TaxActivity" />
         <activity android:name=".vid.Activity.BankActivity" />
         <activity android:name=".vid.Activity.InsuranceActivity" />
@@ -42,7 +45,7 @@
         <activity android:name=".start.activity.LoginActivity" />
         <activity android:name=".start.activity.SignupActivity" />
         <activity android:name=".vid.Activity.ForgotpassActivity" />
-        <activity android:name=".vid.Activity.HomeActivity" />
+        <activity android:name=".vid.Activity.BirthActivity" />
         <activity
             android:name=".nav.activity.SettingsActivity"
             android:label="@string/title_activity_settings"
@@ -53,7 +56,8 @@
                 android:value="com.example.explorer.vid.vid.Activity.HomeActivity" />
         </activity>
         <activity android:name=".nav.activity.FeedbackActivity" />
-        <activity android:name=".nav.activity.AboutActivity"></activity>
+        <activity android:name=".nav.activity.AboutActivity" />
+        <activity android:name=".start.activity.CheckingActivity"></activity>
     </application>
 
 </manifest>

@@ -94,7 +94,7 @@
     <string name="feedbackbutton"> Send Feedback </string>
     <string name="login">Login</string>
     <string name="ec">EC</string>
-    <string name="back">Back</string>
+    <string name="back">Send</string>
     <string name="education">Education</string>
     <string name="hajj">Hajj</string>
     <string name="information_details">Information Details</string>
@@ -147,4 +147,18 @@
     <string name="name_of_university">Name of University:</string>
     <string name="department">Department:</string>
     <string name="id">ID:</string>
+    <string name="place_of_birth">Place of Birth</string>
+    <string name="blood_group">Blood Group:</string>
+    <string name="father_husband_name">Father/Husband Name:</string>
+    <string name="present_address">Present Address:</string>
+    <string name="driving_license_category">Driving License Category:</string>
+    <string name="nid_s">NID:</string>
+    <string name="ec_voting_address">Ec Voting Address:</string>
+    <string name="ec_zone">EC Zone:</string>
+    <string name="ec_serial_no">EC Serial No:</string>
+    <string name="id_no">ID No:</string>
+    <string name="ok">OK</string>
+    <string name="issue_date">Issue Date:</string>
+    <string name="police_records">Police Records:</string>
+    <string name="nationality">Nationality:</string>
 </resources>

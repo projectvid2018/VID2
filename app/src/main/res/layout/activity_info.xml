@@ -40,17 +40,660 @@
                 android:textStyle="bold"/>
         </LinearLayout>
 
+
         <Button
             android:id="@+id/backButtonId"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="match_parent"
             android:text="@string/back"
+            android:textStyle="bold"
+            android:textColor="@color/White"
             android:layout_gravity="end|center_vertical"
             android:background="@drawable/button_background"
             />
 
-
     </android.support.v7.widget.CardView>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                card_view:cardElevation="8dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/name"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/perNameId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/nid_s"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/perNidId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/surname"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/perSurNameId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/father_s_name"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/perFatherNameId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/mother_s_name"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/perMotherNameId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/date_of_birth"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/perBirthId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/present_address"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/perPresentAddId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/permanent_address"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/perPermanentAddId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/nationality"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/nationalityId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/sex"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/perSexId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Height"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/perHeightId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Weight:"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/perWeightId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Religion"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/perReligionId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/blood_group"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/perBloodGroupId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Disabilities"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/disabilitiesId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Disability Type"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/disabilityTypeId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/place_of_birth"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/perBirthPlaceId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Personal Email"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/personalEmailId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Business Email"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/businessEmailId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Contact No:"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/contactNoId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+
+
+
+
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
 
 
 </LinearLayout>

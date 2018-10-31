@@ -26,12 +26,12 @@
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/drive"
-                />
+                android:contentDescription="@string/todo" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
-                android:text="Driving"
+                android:text="@string/driving"
                 android:textSize="30sp"
                 android:padding="10dp"
                 android:gravity="center_vertical"
@@ -41,15 +41,17 @@
 
         </LinearLayout>
 
+
         <Button
             android:id="@+id/backButtonId"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:text="Back"
-            android:layout_gravity="right|center_vertical"
+            android:layout_height="match_parent"
+            android:text="@string/back"
+            android:textStyle="bold"
+            android:textColor="@color/White"
+            android:layout_gravity="end|center_vertical"
             android:background="@drawable/button_background"
             />
-
 
     </android.support.v7.widget.CardView>
 
@@ -60,7 +62,324 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                card_view:cardElevation="8dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".75"
+                            android:text="@string/name"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            />
+                        <TextView
+                            android:id="@+id/dNameId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.25"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".75"
+                            android:text="@string/date_of_birth"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/dBirthId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.25"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".75"
+                            android:text="@string/blood_group"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/dBloodGroupId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.25"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".75"
+                            android:text="@string/father_husband_name"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/dFatherHusbandNameId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".75"
+                            android:text="@string/present_address"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/dPresentAddress"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.25"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".8"
+                            android:text="Driving Licence No:"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/drivingLicenseNoId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.2"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".9"
+                            android:text="@string/driving_license_category"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/drivingLicenseCategoryId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".9"
+                            android:text="Driving licence Issue:"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/drivingLicenseIssueId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".9"
+                            android:text="Driving licence End:"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/drivingLicenseEndId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".9"
+                            android:text="Vehicle Id:"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/dVehicleId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
 
         </LinearLayout>
     </ScrollView>

@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:background="@color/MediumAquamarine"
+            android:background="@color/BurlyWood"
             >
 
             <ImageView
@@ -43,14 +43,208 @@
         <Button
             android:id="@+id/backButtonId"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="match_parent"
             android:text="@string/back"
+            android:textStyle="bold"
+            android:textColor="@color/White"
             android:layout_gravity="end|center_vertical"
             android:background="@drawable/button_background"
             />
 
 
     </android.support.v7.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                card_view:cardElevation="8dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/name"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/lNameId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Case: "
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/lCaseId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Pending Cases"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/lPendingCasesId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Case File No:"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/lCaseFileNoId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Case Details:"
+                            android:gravity="start|center_vertical"
+                            android:layout_gravity="center"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+                        <TextView
+                            android:id="@+id/lCaseDetails"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="@string/na"
+                            android:gravity="start|center_vertical"
+                            android:textColor="#000"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                            />
+
+
+                    </LinearLayout>
+
+
+
+
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
 
 
 </LinearLayout>

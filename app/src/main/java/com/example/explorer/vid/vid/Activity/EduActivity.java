@@ -30,6 +30,7 @@ public class EduActivity extends AppCompatActivity {
     private TextView tvUniSession,tvUniPassYear;
 
     private DatabaseReference mRef;
+    private String u_nid ="1234567890";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +64,7 @@ public class EduActivity extends AppCompatActivity {
         tvUniSession = findViewById(R.id.uniSessionId);
         tvUniPassYear = findViewById(R.id.uniPassingYearId);
 
-        mRef = FirebaseDatabase.getInstance().getReference().child("Member").child("1234567890").child("Education");
+        mRef = FirebaseDatabase.getInstance().getReference().child("Member").child(u_nid).child("Education");
 
 
         mRef.addValueEventListener(new ValueEventListener() {
