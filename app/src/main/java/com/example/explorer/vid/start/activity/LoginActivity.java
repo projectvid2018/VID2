@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.explorer.vid.R;
-import com.example.explorer.vid.vid.Activity.ForgotpassActivity;
 import com.example.explorer.vid.vid.Activity.HomeActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

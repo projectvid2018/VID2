@@ -10,21 +10,12 @@ import com.example.explorer.vid.R;
 
 public class OthersActivity extends AppCompatActivity {
 
-    private Button backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_others);
 
-        backButton = findViewById(R.id.backButtonId);
 
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 }

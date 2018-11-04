@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.explorer.vid.R;
+import com.example.explorer.vid.vid.Activity.HomeActivity;
 
 public class SplashScreen extends Activity implements Runnable
 {
@@ -36,7 +37,7 @@ public class SplashScreen extends Activity implements Runnable
         }
         finally
         {
-            startActivity(new Intent(SplashScreen.this, LoginActivity.class));
+            startActivity(new Intent(SplashScreen.this, HomeActivity.class));
 
             finish();
         }

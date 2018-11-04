@@ -18,7 +18,6 @@ import com.google.firebase.database.ValueEventListener;
 
 public class HajjActivity extends AppCompatActivity {
 
-    private Button backButton;
 
     private TextView tvName ;
     private TextView tvHajjRegNo, tvHajjFlightNo, tvHajjSession  ;
@@ -31,7 +30,6 @@ public class HajjActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hajj);
 
-        backButton = findViewById(R.id.backButtonId);
 
         tvName = findViewById(R.id.hNameId);
         tvHajjRegNo = findViewById(R.id.hajjRegId);
@@ -67,12 +65,6 @@ public class HajjActivity extends AppCompatActivity {
         });
 
 
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                startActivity(intent);
-            }
-        });
+
     }
 }

@@ -17,7 +17,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class LawActivity extends AppCompatActivity {
-    private Button backButton;
 
     private TextView textView1;
     private TextView textView2;
@@ -35,7 +34,6 @@ public class LawActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_law);
 
-        backButton = findViewById(R.id.backButtonId);
 
         textView1 = findViewById(R.id.lNameId);
         textView2 = findViewById(R.id.lCaseId);
@@ -75,12 +73,5 @@ public class LawActivity extends AppCompatActivity {
             }
         });
 
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 }

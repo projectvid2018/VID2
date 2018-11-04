@@ -1,4 +1,4 @@
-package com.example.explorer.vid.vid.Activity;
+package com.example.explorer.vid.start.activity;
 
 import android.app.DatePickerDialog;
 import android.graphics.Color;
@@ -24,6 +24,8 @@ public class ForgotpassActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgotpass);
+
+
         mDisplayDate=(TextView) findViewById((R.id.day_picker_selected_date_layout));
 
         mDisplayDate.setOnClickListener(new View.OnClickListener() {

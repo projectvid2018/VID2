@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/Wheat"
     android:theme="@style/Theme.Design.Light.NoActionBar"
-    tools:context="com.example.explorer.vid.vid.Activity.ForgotpassActivity">
+    tools:context="com.example.explorer.vid.start.activity.ForgotpassActivity">
 
 
 

@@ -18,7 +18,6 @@ import com.google.firebase.database.ValueEventListener;
 
 public class InfoActivity extends AppCompatActivity {
 
-    private Button backButton;
     private String u_nid ="1234567890";
     private DatabaseReference mRef;
 
@@ -48,7 +47,6 @@ public class InfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-        backButton = findViewById(R.id.backButtonId);
 
         textView1 = findViewById(R.id.perNameId);
         textView2 = findViewById(R.id.perSurNameId);
@@ -129,12 +127,6 @@ public class InfoActivity extends AppCompatActivity {
             }
         });
 
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                startActivity(intent);
-            }
-        });
+
     }
 }

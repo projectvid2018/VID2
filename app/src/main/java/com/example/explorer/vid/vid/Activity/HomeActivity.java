@@ -18,17 +18,27 @@ import android.widget.LinearLayout;
 
 import com.example.explorer.vid.nav.activity.AboutActivity;
 import com.example.explorer.vid.R;
+import com.example.explorer.vid.nav.activity.SendDataActivity;
+import com.example.explorer.vid.nav.activity.SenderSelectActivity;
 import com.example.explorer.vid.nav.activity.SettingsActivity;
 import com.example.explorer.vid.nav.activity.FeedbackActivity;
+import com.example.explorer.vid.start.activity.CheckingActivity;
+import com.example.explorer.vid.start.activity.LoginActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        mAuth = FirebaseAuth.getInstance();
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 
@@ -42,6 +52,18 @@ public class HomeActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+    public void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        if (currentUser == null) {
+            Intent intent = new Intent(getApplicationContext(),CheckingActivity.class);
+            startActivity(intent);
+            finish();
+
+        }
+    }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -51,6 +73,8 @@ public class HomeActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -91,16 +115,16 @@ public class HomeActivity extends AppCompatActivity
         //-------------------------------------------------------------------------------------------logout
         else if (id == R.id.nav_logout) {
             AlertDialog.Builder builder=new AlertDialog.Builder(HomeActivity.this); //-------Home is name of the activity
-            builder.setMessage("Do you want to exit?");
+            builder.setMessage("Do you want to log out?");
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int id) {
 
                     finish();
-                    Intent i=new Intent();
+                    Intent i=new Intent(HomeActivity.this,LoginActivity.class);
                     i.putExtra("finish", true);
                     i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //----------------------------------- To clean up all activities
-                    //startActivity(i);
+                    startActivity(i);
                     finish();
 
                 }
@@ -121,6 +145,10 @@ public class HomeActivity extends AppCompatActivity
         //-------------------------------------------------------------------------------------------feedback
         else if (id == R.id.nav_feedback) {
             Intent intent = new Intent(HomeActivity.this,FeedbackActivity.class);
+            startActivity(intent);
+        }
+        else if (id == R.id.nav_send_data) {
+            Intent intent = new Intent(HomeActivity.this,SenderSelectActivity.class);
             startActivity(intent);
         }
         //-------------------------------------------------------------------------------------------website link

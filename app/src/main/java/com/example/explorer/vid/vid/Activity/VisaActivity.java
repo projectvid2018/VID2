@@ -17,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class VisaActivity extends AppCompatActivity {
-    private Button backButton;
+
 
     private TextView textView1;
     private TextView textView2;
@@ -37,7 +37,7 @@ public class VisaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visa);
 
-        backButton = findViewById(R.id.backButtonId);
+
 
 
         textView1 = findViewById(R.id.vNameId);
@@ -83,12 +83,6 @@ public class VisaActivity extends AppCompatActivity {
             }
         });
 
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                startActivity(intent);
-            }
-        });
+
     }
 }

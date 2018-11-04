@@ -32,15 +32,13 @@ public class SignupActivity extends AppCompatActivity {
     android.support.v7.widget.Toolbar toolbar;
 
     private static final String TAG= "SignupActivity";
-    private TextView mDisplayDate;
-    private  DatePickerDialog.OnDateSetListener mDatesetListener;
+/*    private TextView mDisplayDate;
+    private  DatePickerDialog.OnDateSetListener mDatesetListener;*/
 
-    private EditText editTextNid;
-    private EditText editTextUsername;
-    private EditText editTextDate;
-    private EditText editTextPhoneNo;
+
     private EditText editTextEmail;
     private EditText editTextPassword;
+    private EditText editTextConPassword;
     CardView cardView;
 
     private ProgressBar progressBar;
@@ -60,12 +58,10 @@ public class SignupActivity extends AppCompatActivity {
 
         databaseReference = FirebaseDatabase.getInstance().getReference("people");
 
-        editTextNid = findViewById(R.id.nidId);
-        editTextUsername = findViewById(R.id.userNameId);
-        editTextDate = findViewById(R.id.day_picker_selected_date_layout);
-        editTextPhoneNo = findViewById(R.id.phoneNoId);
+
         editTextEmail = findViewById(R.id.emailId);
         editTextPassword = findViewById(R.id.passwordId);
+        editTextConPassword = findViewById(R.id.passwordId);
         cardView = findViewById(R.id.SignupId);
 
         mAuth = FirebaseAuth.getInstance();
@@ -73,8 +69,8 @@ public class SignupActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressbarId);
 
         //DatePicker Dialogue/spiner
-
-        mDisplayDate=(TextView) findViewById((R.id.day_picker_selected_date_layout));
+/*
+        mDisplayDate=findViewById((R.id.day_picker_selected_date_layout));
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,8 +87,8 @@ public class SignupActivity extends AppCompatActivity {
                 dialog.show();
 
             }
-        });
-
+        });*/
+/*
         mDatesetListener=new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int day) {
@@ -101,7 +97,7 @@ public class SignupActivity extends AppCompatActivity {
                 String date=month+"/"+day+"/"+year;
                 mDisplayDate.setText(date);
             }
-        };
+        };*/
 
     }
 
@@ -111,56 +107,13 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     public void addMember(){
-        String nid = editTextNid.getText().toString().trim();
-        String username = editTextUsername.getText().toString().trim();
-        String  date= editTextDate.getText().toString().trim();
-        String phoneNo = editTextPhoneNo.getText().toString().trim();
+
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
-
-        // NID
-        if(nid.isEmpty()){
-            editTextNid.setError("Insert NID");
-            editTextNid.requestFocus();
-            return;
-        }
-        else if (nid.length()<10  ){
-            editTextNid.setError("Insert valid NID");
-            editTextNid.requestFocus();
-            return;
-        }
-
-        //UserName
-        else if(username.isEmpty()){
-            editTextUsername.setError("Insert user name");
-            editTextUsername.requestFocus();
-            return;
-        }
-
-        // Date
-        else if(date.isEmpty()){
-            editTextDate.setError("Insert date of birth");
-            editTextDate.requestFocus();
-            return;
-        }
-
-        //Phone Number
-        else if(phoneNo.isEmpty()){
-            editTextPhoneNo.setError("Insert phone number");
-            editTextPhoneNo.requestFocus();
-            return;
-        }
-        else if(phoneNo.length()<11  ){
-            editTextPhoneNo.setError("Insert valid phone number");
-            editTextPhoneNo.requestFocus();
-            return;
-        }
-
-
-
+        String confirmPassword = editTextConPassword.getText().toString().trim();
 
         //Email
-        else if(email.isEmpty()){
+        if(email.isEmpty()){
             editTextEmail.setError("Insert email");
             editTextEmail.requestFocus();
             return;
@@ -172,11 +125,15 @@ public class SignupActivity extends AppCompatActivity {
         }
 
 
-
-
         //password
         else if(password.isEmpty()){
             editTextPassword.setError("Insert password");
+            editTextPassword.requestFocus();
+            return;
+        }
+
+        else if(confirmPassword.isEmpty()){
+            editTextPassword.setError("Insert confirm password");
             editTextPassword.requestFocus();
             return;
         }
@@ -185,15 +142,11 @@ public class SignupActivity extends AppCompatActivity {
             editTextPassword.requestFocus();
             return;
         }
-
+        else if (!password.equals(confirmPassword)){
+            Toast.makeText(getApplicationContext(),"Password are does'nt match",Toast.LENGTH_LONG).show();
+        }
 
         else{
-            String id = databaseReference.push().getKey();
-
-            People people = new People(id,nid,username,date,phoneNo,email,password);
-            databaseReference.child(nid).setValue(people);
-
-
 
             progressBar.setVisibility(View.VISIBLE);
 

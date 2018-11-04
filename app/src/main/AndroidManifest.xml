@@ -8,44 +8,99 @@
 
     <application
         android:allowBackup="true"
-        android:hardwareAccelerated="false"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".vid.Activity.HomeActivity">
+        android:theme="@style/AppTheme">
+        <activity android:name=".start.activity.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".vid.Activity.NidActivity" />
-        <activity android:name=".start.activity.SplashScreen" />
-        <activity android:name=".vid.Activity.InfoActivity" />
-        <activity android:name=".vid.Activity.DrivingActivity" />
-        <activity android:name=".vid.Activity.PassportActivity" />
-        <activity android:name=".vid.Activity.VisaActivity" />
-        <activity android:name=".vid.Activity.HajjActivity" />
-        <activity android:name=".vid.Activity.PropertiesActivity" />
-        <activity android:name=".vid.Activity.LawActivity"
+        <activity
+            android:name=".vid.Activity.NidActivity"
+            android:label="@string/nid"
             android:parentActivityName=".vid.Activity.HomeActivity" />
-        <activity android:name=".vid.Activity.EcActivity" />
-        <activity android:name=".vid.Activity.PoliceActivity" />
-        <activity android:name=".vid.Activity.MarriageActivity" />
-        <activity android:name=".vid.Activity.EduActivity" />
-        <activity android:name=".vid.Activity.TaxActivity" />
-        <activity android:name=".vid.Activity.BankActivity" />
-        <activity android:name=".vid.Activity.InsuranceActivity" />
-        <activity android:name=".vid.Activity.SocialActivity" />
-        <activity android:name=".vid.Activity.OthersActivity" />
+        <activity
+            android:name=".vid.Activity.HomeActivity"
+            android:label="Home" />
+        <activity android:name=".start.activity.CheckingActivity" />
+        <activity
+            android:name=".vid.Activity.InfoActivity"
+            android:label="@string/information"
+            android:parentActivityName=".vid.Activity.HomeActivity" />
+        <activity
+            android:name=".vid.Activity.DrivingActivity"
+            android:label="@string/driving"
+            android:parentActivityName=".vid.Activity.HomeActivity" />
+        <activity
+            android:name=".vid.Activity.PassportActivity"
+            android:label="@string/passport"
+            android:parentActivityName=".vid.Activity.HomeActivity" />
+        <activity
+            android:name=".vid.Activity.VisaActivity"
+            android:label="@string/visa"
+            android:parentActivityName=".vid.Activity.HomeActivity" />
+        <activity
+            android:name=".vid.Activity.HajjActivity"
+            android:label="@string/hajj"
+            android:parentActivityName=".vid.Activity.HomeActivity" />
+        <activity
+            android:name=".vid.Activity.PropertiesActivity"
+            android:label="@string/properties"
+            android:parentActivityName=".vid.Activity.HomeActivity" />
+        <activity
+            android:name=".vid.Activity.LawActivity"
+            android:label="@string/law"
+            android:parentActivityName=".vid.Activity.HomeActivity" />
+        <activity
+            android:name=".vid.Activity.EcActivity"
+            android:label="@string/ec"
+            android:parentActivityName=".vid.Activity.HomeActivity" />
+        <activity
+            android:name=".vid.Activity.PoliceActivity"
+            android:label="@string/police"
+            android:parentActivityName=".vid.Activity.HomeActivity" />
+        <activity
+            android:name=".vid.Activity.MarriageActivity"
+            android:label="@string/marriage"
+            android:parentActivityName=".vid.Activity.HomeActivity" />
+        <activity
+            android:name=".vid.Activity.EduActivity"
+            android:label="@string/education"
+            android:parentActivityName=".vid.Activity.HomeActivity" />
+        <activity
+            android:name=".vid.Activity.TaxActivity"
+            android:label="@string/tax"
+            android:parentActivityName=".vid.Activity.HomeActivity" />
+        <activity
+            android:name=".vid.Activity.BankActivity"
+            android:label="@string/bank"
+            android:parentActivityName=".vid.Activity.HomeActivity" />
+        <activity
+            android:name=".vid.Activity.InsuranceActivity"
+            android:label="@string/insurance"
+            android:parentActivityName=".vid.Activity.HomeActivity" />
+        <activity
+            android:name=".vid.Activity.SocialActivity"
+            android:label="@string/social"
+            android:parentActivityName=".vid.Activity.HomeActivity" />
+        <activity
+            android:name=".vid.Activity.OthersActivity"
+            android:label="@string/others"
+            android:parentActivityName=".vid.Activity.HomeActivity" />
         <activity android:name=".start.activity.LoginActivity" />
         <activity android:name=".start.activity.SignupActivity" />
-        <activity android:name=".vid.Activity.ForgotpassActivity" />
-        <activity android:name=".vid.Activity.BirthActivity" />
+        <activity android:name=".start.activity.ForgotpassActivity" />
+        <activity
+            android:name=".vid.Activity.BirthActivity"
+            android:label="@string/birth"
+            android:parentActivityName=".vid.Activity.HomeActivity" />
         <activity
             android:name=".nav.activity.SettingsActivity"
             android:label="@string/title_activity_settings"
@@ -56,8 +111,13 @@
                 android:value="com.example.explorer.vid.vid.Activity.HomeActivity" />
         </activity>
         <activity android:name=".nav.activity.FeedbackActivity" />
-        <activity android:name=".nav.activity.AboutActivity" />
-        <activity android:name=".start.activity.CheckingActivity"></activity>
+        <activity
+            android:name=".nav.activity.AboutActivity"
+            android:label="@string/about"
+            android:parentActivityName=".vid.Activity.HomeActivity" />
+        <activity android:name=".nav.activity.SendDataActivity" />
+        <activity android:name=".nav.activity.SenderSelectActivity"
+            android:label="Select data"></activity>
     </application>
 
 </manifest>

@@ -17,7 +17,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class NidActivity extends AppCompatActivity {
-    private Button backButton;
     private TextView tvName, tvFatherName,tvMotherName;
     private TextView tvBirthDate,tvNid, tvPermanentAddress,tvBloodGroup  ;
     private String u_nid ="1234567890";
@@ -28,7 +27,6 @@ public class NidActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nid);
 
-        backButton = findViewById(R.id.backButtonId);
 
         tvName = findViewById(R.id.nNameId);
         tvFatherName = findViewById(R.id.nFatherNameId);
@@ -73,12 +71,6 @@ public class NidActivity extends AppCompatActivity {
         });
 
 
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                startActivity(intent);
-            }
-        });
+
     }
 }

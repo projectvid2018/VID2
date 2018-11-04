@@ -17,7 +17,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class MarriageActivity extends AppCompatActivity {
-    private Button backButton;
 
     private TextView textView1;
     private TextView textView2;
@@ -35,7 +34,6 @@ public class MarriageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_marriage);
 
-        backButton = findViewById(R.id.backButtonId);
 
         textView1 = findViewById(R.id.spouseNameId);
         textView2 = findViewById(R.id.spouseFatherNameId);
@@ -78,12 +76,6 @@ public class MarriageActivity extends AppCompatActivity {
         });
 
 
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                startActivity(intent);
-            }
-        });
+
     }
 }

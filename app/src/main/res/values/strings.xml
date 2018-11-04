@@ -161,4 +161,8 @@
     <string name="issue_date">Issue Date:</string>
     <string name="police_records">Police Records:</string>
     <string name="nationality">Nationality:</string>
+    <string name="date_birth">Date of birth</string>
+    <string name="check">Check</string>
+    <string name="email">Email</string>
+    <string name="confirm_password">Confirm Password</string>
 </resources>

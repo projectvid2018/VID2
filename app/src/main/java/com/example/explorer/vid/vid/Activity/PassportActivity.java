@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class PassportActivity extends AppCompatActivity {
 
-    private Button backButton;
+
     private TextView tvSurname, tvGivenName,tvBirthDate ;
     private TextView tvSex, tvIssueDate,tvExpiryDate,tvPersonalNo ;
     private TextView tvName, tvFatherName,tvMotherName ;
@@ -34,7 +34,7 @@ public class PassportActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_passport);
 
-        backButton = findViewById(R.id.backButtonId);
+
 
         tvSurname = findViewById(R.id.surnamePassportId);
         tvGivenName = findViewById(R.id.givenNameId);
@@ -102,13 +102,6 @@ public class PassportActivity extends AppCompatActivity {
             }
         });
 
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
 

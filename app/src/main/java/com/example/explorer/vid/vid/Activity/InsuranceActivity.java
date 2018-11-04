@@ -19,7 +19,6 @@ import com.google.firebase.database.ValueEventListener;
 
 public class InsuranceActivity extends AppCompatActivity {
 
-    private Button backButton;
 
     private TextView textView1;
     private TextView textView2;
@@ -86,14 +85,5 @@ public class InsuranceActivity extends AppCompatActivity {
 
 
 
-        backButton = findViewById(R.id.backButtonId);
-
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 }

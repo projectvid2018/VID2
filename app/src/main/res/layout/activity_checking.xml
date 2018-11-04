@@ -19,7 +19,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="20dp"
+            android:padding="5dp"
             android:src="@drawable/ict"
             />
 
@@ -33,12 +34,21 @@
             android:textStyle="bold"
             android:inputType="number"
             android:drawableStart="@drawable/ic_user"/>
-        <EditText
+
+        <ProgressBar
+            android:id="@+id/checkingProgressBarId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            />
+        <DatePicker
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Date of birth"
+            android:hint="@string/date_birth"
             android:padding="10dp"
             android:layout_margin="5dp"
+            android:inputType="date"
             android:textStyle="bold"
             android:id="@+id/checkingBirthId"
             android:drawableStart="@drawable/ic_date"/>
@@ -50,17 +60,39 @@
             android:layout_height="50dp"
             android:layout_marginTop="15dp"
             app:cardCornerRadius="5dp"
+            android:visibility="gone"
             app:cardBackgroundColor="@color/md_green_500"
             android:layout_gravity="center"
             >
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Check"
+                android:text="@string/check"
                 android:textColor="@color/White"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:gravity="center" />
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/checkingNextBtnId"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="5dp"
+
+            app:cardBackgroundColor="@color/md_green_500"
+            android:layout_gravity="center"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="NEXT"
+                android:textColor="@color/White"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:drawableEnd="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:gravity="center" />
+
         </android.support.v7.widget.CardView>
 
     </LinearLayout>

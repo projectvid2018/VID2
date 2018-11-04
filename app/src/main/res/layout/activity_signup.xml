@@ -6,20 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Wheat"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:theme="@style/Theme.Design.Light.NoActionBar"
     tools:context="com.example.explorer.vid.start.activity.SignupActivity">
 
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center"
+            android:layout_gravity="center_vertical"
             android:layout_marginBottom="50dp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp"
@@ -27,68 +24,22 @@
             >
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
+                android:layout_height="100dp"
                 android:src="@drawable/ict"
-                />
-            <!-- NID number -->
-            <EditText
-                android:id="@+id/nidId"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="NID no."
-                android:textStyle="bold"
-                android:inputType="number"
-                android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_pin"/>
-
-            <!-- Username -->
-            <EditText
-                android:id="@+id/userNameId"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Choose Username"
-                android:textStyle="bold"
-                android:inputType="text"
-                android:drawableLeft="@drawable/ic_user"
-                android:layout_marginTop="5dp"/>
+                android:contentDescription="@string/todo" />
 
 
-            <!-- Date of Birth -->
-
-
-
-            <EditText
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Date of Birth"
-                android:textStyle="bold"
-                android:inputType="date"
-                android:layout_marginTop="5dp"
-                android:drawableLeft="@drawable/ic_date"
-                android:id="@+id/day_picker_selected_date_layout"/>
-
-            <!-- Phone number -->
-            <EditText
-                android:id="@+id/phoneNoId"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Phone no."
-                android:textStyle="bold"
-                android:inputType="phone"
-                android:layout_marginTop="5dp"
-                android:drawableLeft="@drawable/ic_phone"/>
 
             <!-- Email -->
             <EditText
                 android:id="@+id/emailId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email id"
+                android:hint="@string/email"
                 android:textStyle="bold"
                 android:inputType="textEmailAddress"
-                android:layout_marginTop="5dp"
-                android:drawableLeft="@drawable/ic_mail"/>
+                android:layout_marginTop="15dp"
+                android:drawableStart="@drawable/ic_mail"/>
 
             <!-- Password -->
 
@@ -100,6 +51,15 @@
                 android:textStyle="bold"
                 android:inputType="textPassword"
                 android:drawableLeft="@drawable/ic_pass"
+                />
+            <EditText
+                android:id="@+id/confirmPasswordId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/confirm_password"
+                android:textStyle="bold"
+                android:inputType="textPassword"
+                android:drawableStart="@drawable/ic_pass"
                 />
 
             <ProgressBar
@@ -136,7 +96,5 @@
             </android.support.v7.widget.CardView>
         </LinearLayout>
 
-
-    </ScrollView>
 
 </LinearLayout>

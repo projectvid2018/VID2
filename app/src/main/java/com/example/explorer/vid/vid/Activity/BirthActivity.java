@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class BirthActivity extends AppCompatActivity {
 
-    private Button backButton;
+
 
     private TextView tvName, tvBirthDate,tvSex ,tvBirthPlace;
     private TextView tvFatherName,tvMotherName,tvPermanentAddress  ;
@@ -30,7 +30,6 @@ public class BirthActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_birth);
 
-        backButton = findViewById(R.id.backButtonId);
 
         tvName = findViewById(R.id.nameBirthId);
         tvBirthDate = findViewById(R.id.dateBirthId);
@@ -75,12 +74,6 @@ public class BirthActivity extends AppCompatActivity {
         });
 
 
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                startActivity(intent);
-            }
-        });
+
     }
 }

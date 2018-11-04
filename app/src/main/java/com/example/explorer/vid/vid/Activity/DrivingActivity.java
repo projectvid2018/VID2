@@ -17,7 +17,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class DrivingActivity extends AppCompatActivity {
-    private Button backButton;
 
     private TextView tvName, tvBirthDate,tvBloodGroup,tvVehicleId ;
     private TextView tvFatherName,tvPresentAddress,tvDrivingLicenseNo  ;
@@ -31,7 +30,6 @@ public class DrivingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driving);
 
-        backButton = findViewById(R.id.backButtonId);
 
         tvName = findViewById(R.id.dNameId);
         tvBirthDate = findViewById(R.id.dBirthId);
@@ -87,12 +85,5 @@ public class DrivingActivity extends AppCompatActivity {
         });
 
 
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 }

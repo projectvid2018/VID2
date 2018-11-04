@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class PropertiesActivity extends AppCompatActivity {
 
-    private Button backButton;
+
 
     private TextView textView1;
     private TextView textView2;
@@ -35,7 +35,7 @@ public class PropertiesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_properties);
 
-        backButton = findViewById(R.id.backButtonId);
+
 
         textView1 = findViewById(R.id.propertyCategoryId);
         textView2 = findViewById(R.id.propertyDetailsId);
@@ -66,12 +66,6 @@ public class PropertiesActivity extends AppCompatActivity {
         });
 
 
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                startActivity(intent);
-            }
-        });
+
     }
 }

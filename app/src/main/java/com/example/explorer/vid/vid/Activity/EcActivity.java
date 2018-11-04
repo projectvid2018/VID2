@@ -17,7 +17,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class EcActivity extends AppCompatActivity {
-    private Button backButton;
 
     private TextView tvName,tvNid, tvBirthDate ;
     private TextView tvEcZone, tvEcSerialNo, tvEcVotingAddress  ;
@@ -31,7 +30,6 @@ public class EcActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ec);
 
-        backButton = findViewById(R.id.backButtonId);
 
         tvName = findViewById(R.id.eNameId);
         tvNid = findViewById(R.id.eNidId);
@@ -75,12 +73,6 @@ public class EcActivity extends AppCompatActivity {
         });
 
 
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                startActivity(intent);
-            }
-        });
+
     }
 }
