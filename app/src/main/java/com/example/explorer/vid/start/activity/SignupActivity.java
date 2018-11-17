@@ -23,10 +23,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
+
+import static com.example.explorer.vid.start.activity.CheckingActivity.EXTRA_DATE;
+import static com.example.explorer.vid.start.activity.CheckingActivity.EXTRA_NID;
 
 public class SignupActivity extends AppCompatActivity {
     android.support.v7.widget.Toolbar toolbar;
@@ -45,7 +49,7 @@ public class SignupActivity extends AppCompatActivity {
 
     private  String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
-    DatabaseReference databaseReference;
+    DatabaseReference userDatabase;
 
     private FirebaseAuth mAuth;
 
@@ -56,48 +60,19 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("people");
+
 
 
         editTextEmail = findViewById(R.id.emailId);
         editTextPassword = findViewById(R.id.passwordId);
-        editTextConPassword = findViewById(R.id.passwordId);
+        editTextConPassword = findViewById(R.id.confirmPasswordId);
         cardView = findViewById(R.id.SignupId);
 
         mAuth = FirebaseAuth.getInstance();
-
         progressBar = findViewById(R.id.progressbarId);
 
-        //DatePicker Dialogue/spiner
-/*
-        mDisplayDate=findViewById((R.id.day_picker_selected_date_layout));
-        mDisplayDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Calendar cal=Calendar.getInstance();
-                int year=cal.get(Calendar.YEAR);
-                int month=cal.get(Calendar.MONTH);
-                int day=cal.get(Calendar.DAY_OF_MONTH);
 
-                DatePickerDialog dialog=new DatePickerDialog(SignupActivity.this
-                        ,android.R.style.Theme_Holo_Light_Dialog_MinWidth
-                        ,mDatesetListener,year,month,day);
 
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.show();
-
-            }
-        });*/
-/*
-        mDatesetListener=new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year, int month, int day) {
-                //Log.d(TAG,"onDateSet; date;" +month "/" +day "/"+year);
-                month=month+1;
-                String date=month+"/"+day+"/"+year;
-                mDisplayDate.setText(date);
-            }
-        };*/
 
     }
 
@@ -108,9 +83,13 @@ public class SignupActivity extends AppCompatActivity {
 
     public void addMember(){
 
-        String email = editTextEmail.getText().toString().trim();
-        String password = editTextPassword.getText().toString().trim();
+        final String email = editTextEmail.getText().toString().trim();
+        final String password = editTextPassword.getText().toString().trim();
         String confirmPassword = editTextConPassword.getText().toString().trim();
+
+        Intent intent = getIntent();
+        final String nid = intent.getStringExtra(EXTRA_NID);
+        final String birthDate = intent.getStringExtra(EXTRA_DATE);
 
         //Email
         if(email.isEmpty()){
@@ -133,8 +112,8 @@ public class SignupActivity extends AppCompatActivity {
         }
 
         else if(confirmPassword.isEmpty()){
-            editTextPassword.setError("Insert confirm password");
-            editTextPassword.requestFocus();
+            editTextConPassword.setError("Insert confirm password");
+            editTextConPassword.requestFocus();
             return;
         }
         else if(password.length()<6){
@@ -143,24 +122,38 @@ public class SignupActivity extends AppCompatActivity {
             return;
         }
         else if (!password.equals(confirmPassword)){
-            Toast.makeText(getApplicationContext(),"Password are does'nt match",Toast.LENGTH_LONG).show();
+            editTextConPassword.setError("Password doesn't match");
         }
 
-        else{
-
+        else {
             progressBar.setVisibility(View.VISIBLE);
-
             mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    progressBar.setVisibility(View.GONE);
                     if(task.isSuccessful()){
-                        Toast.makeText(getApplicationContext(),"User Registration Successful",Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(intent);
+                        FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
+                        String id = current_user.getUid();
+                        userDatabase = FirebaseDatabase.getInstance()
+                                .getReference("Registered_user/"+id);
+
+                        User newUser = new User(id,nid,birthDate,email,password);
+
+                        userDatabase.setValue(newUser).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()){
+                                    progressBar.setVisibility(View.GONE);
+                                    Toast.makeText(getApplicationContext(),"User Registration Successful",Toast.LENGTH_LONG).show();
+                                    Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            }
+                        });
 
                     }else {
+                        progressBar.setVisibility(View.GONE);
                         if(task.getException() instanceof FirebaseAuthUserCollisionException){
                             Toast.makeText(getApplicationContext(),"You are already registered",Toast.LENGTH_SHORT).show();
 
@@ -170,6 +163,7 @@ public class SignupActivity extends AppCompatActivity {
                     }
                 }
             });
+
         }
 
     }

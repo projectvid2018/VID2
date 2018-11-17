@@ -89,7 +89,7 @@
     <string name="feedbackname">Your name</string>
     <string name="feedbackemail">Email</string>
     <string name="feedbacktype">Type</string>
-    <string name="feedbackbody">Feedback details...</string>
+    <string name="feedbackbody">Feedback details…</string>
     <string name="feedbackresponse">Would you like an email response?</string>
     <string name="feedbackbutton"> Send Feedback </string>
     <string name="login">Login</string>
@@ -165,4 +165,29 @@
     <string name="check">Check</string>
     <string name="email">Email</string>
     <string name="confirm_password">Confirm Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="password">Password</string>
+    <string name="institute_name">Institute name</string>
+
+    <string-array name="institute_name">
+        <item>Ahsanullah University of Science and Technology</item>
+        <item>American International University Bangladesh (AIUB)</item>
+        <item>AB Bank Limited</item>
+        <item>Bangladesh University of Engineering and Technology</item>
+        <item>BRAC University</item>
+        <item>Daffodil International University</item>
+        <item>Dhaka Bank Limited</item>
+        <item>Dutch-Bangla Bank Limited</item>
+        <item>East West University</item>
+        <item>Independent University Bangladesh (IUB)</item>
+        <item>Jahangirnagar University</item>
+        <item>National Bank Limited</item>
+        <item>North South University (NSU)</item>
+        <item>The University of Asia Pacific</item>
+        <item>Trust Bank Limited</item>
+        <item>University of Dhaka</item>
+        <item>Uttara Bank Limited</item>
+
+    </string-array>
+
 </resources>

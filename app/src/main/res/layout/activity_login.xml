@@ -5,68 +5,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:background="@color/Wheat"
-    android:theme="@style/Base.Theme.AppCompat.Light"
+    android:orientation="vertical"
+    android:background="@color/WhiteSmoke"
     tools:context="com.example.explorer.vid.start.activity.LoginActivity">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center_vertical"
+        android:layout_gravity="center_horizontal"
         >
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="33dp"
-            android:src="@drawable/ict"
-            />
-        <!-- Username -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginBottom="30dp"
+        android:padding="10dp"
+        android:src="@drawable/ict"
+        android:layout_margin="20dp"
+        android:layout_gravity="top"/>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        app:cardElevation="2dp"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="5dp">
 
         <EditText
             android:id="@+id/logInEmailId"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:layout_gravity="center"
-            android:hint="Email"
+            android:layout_gravity="top"
+            android:hint="@string/email"
+            android:textColor="@color/Teal"
+            android:textColorHint="@color/md_green_400"
+            android:padding="10dp"
             android:inputType="textEmailAddress"
-            android:drawableStart="@drawable/ic_mail"/>
+            android:drawableStart="@drawable/ic_email_black_24dp"/>
 
-        <!-- Passward -->
+        <!-- Password -->
+
 
         <EditText
             android:id="@+id/logInPasswordId"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_gravity="bottom"
+            android:padding="10dp"
+            android:textColor="@color/Teal"
             android:layout_marginTop="15dp"
-            android:hint="Password"
+            android:hint="@string/password"
+            android:textColorHint="@color/md_green_400"
             android:inputType="textPassword"
-            android:drawableStart="@drawable/ic_pass"/>
+            android:drawableStart="@drawable/ic_lock_black_24dp"/>
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/loginProgressbarId"
+            android:visibility="gone"
+            />
+
+    </android.support.v7.widget.CardView>
+
+
 
         <android.support.v7.widget.CardView
             android:id="@+id/cardViewIdLogIn"
-            android:onClick="LoginActivity"
-            android:layout_width="145dp"
-            android:layout_height="50dp"
+            android:onClick="loginActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:cardCornerRadius="25dp"
-            app:cardBackgroundColor="@color/md_green_A400"
+            app:cardCornerRadius="5dp"
+            app:cardBackgroundColor="@color/SeaGreen"
             android:layout_gravity="center"
-            >
+            android:layout_margin="10dp">
             <TextView
                 android:id="@+id/login"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/login"
-                android:textColor="#000000"
-                android:textStyle="bold"
+                android:textColor="@color/White"
                 android:textSize="25sp"
+                android:padding="10dp"
                 android:gravity="center"
-                android:theme="@style/AppTheme"
-                style="@style/Base.CardView"
                 />
         </android.support.v7.widget.CardView>
         <!-- Forgot Password -->
@@ -76,19 +100,18 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
-            android:onClick="forgotpass"
+            android:onClick="ForgotPassword"
             android:padding="@dimen/mdtp_material_button_textsize"
-            android:text="Forgot password?"
+            android:text="@string/forgot_password"
             android:textColor="@color/RoyalBlue"
             android:textSize="15sp"
             android:theme="@style/AppTheme"/>
         <!-- Sign up -->
         <TextView
-            android:id="@+id/Signup"
-            android:onClick="SignUp"
+            android:onClick="AddNewUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign up"
+            android:text="Add new user"
             android:textColor="@color/RoyalBlue"
             android:layout_gravity="center"
             android:theme="@style/AppTheme"
@@ -96,7 +119,6 @@
             tools:ignore="OnClick"
             android:textSize="15sp"
             android:padding="@dimen/mdtp_material_button_textsize"/>
+
     </LinearLayout>
-
-
 </ScrollView>

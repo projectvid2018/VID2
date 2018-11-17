@@ -10,6 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.explorer.vid.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,8 +31,8 @@ public class EduActivity extends AppCompatActivity {
     private TextView tvUniName, tvUniID, tvUniDepartment ;
     private TextView tvUniSession,tvUniPassYear;
 
-    private DatabaseReference mRef;
-    private String u_nid ="1234567890";
+    private DatabaseReference mRef, mDatabase;
+    private FirebaseUser current_user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,72 +66,91 @@ public class EduActivity extends AppCompatActivity {
         tvUniSession = findViewById(R.id.uniSessionId);
         tvUniPassYear = findViewById(R.id.uniPassingYearId);
 
-        mRef = FirebaseDatabase.getInstance().getReference().child("Member").child(u_nid).child("Education");
 
+        current_user = FirebaseAuth.getInstance().getCurrentUser();
+        String user_id = current_user.getUid();
 
-        mRef.addValueEventListener(new ValueEventListener() {
+        mDatabase = FirebaseDatabase.getInstance().getReference("Registered_user/"+user_id);
+
+        mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String user_nid = dataSnapshot.child("userNID").getValue().toString();
+                mRef = FirebaseDatabase.getInstance().getReference().child("Member").child(user_nid).child("Education");
+                mRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                String name = dataSnapshot.child("name").getValue().toString();
-                String dateOfBirth = dataSnapshot.child("dateOfBirth").getValue().toString();
-                String schoolName = dataSnapshot.child("schoolName").getValue().toString();
-                String sscRoll = dataSnapshot.child("sscRoll").getValue().toString();
-                String sscRegistration = dataSnapshot.child("sscRegistration").getValue().toString();
-                String sscGroup = dataSnapshot.child("sscGroup").getValue().toString();
-                String sscResult = dataSnapshot.child("sscResult").getValue().toString();
-                String sscBoard = dataSnapshot.child("sscBoard").getValue().toString();
-                String sscSession = dataSnapshot.child("sscSession").getValue().toString();
-                String sscPassingYear = dataSnapshot.child("sscPassingYear").getValue().toString();
+                        String name = dataSnapshot.child("name").getValue().toString();
+                        String dateOfBirth = dataSnapshot.child("dateOfBirth").getValue().toString();
+                        String schoolName = dataSnapshot.child("schoolName").getValue().toString();
+                        String sscRoll = dataSnapshot.child("sscRoll").getValue().toString();
+                        String sscRegistration = dataSnapshot.child("sscRegistration").getValue().toString();
+                        String sscGroup = dataSnapshot.child("sscGroup").getValue().toString();
+                        String sscResult = dataSnapshot.child("sscResult").getValue().toString();
+                        String sscBoard = dataSnapshot.child("sscBoard").getValue().toString();
+                        String sscSession = dataSnapshot.child("sscSession").getValue().toString();
+                        String sscPassingYear = dataSnapshot.child("sscPassingYear").getValue().toString();
 
-                String collageName = dataSnapshot.child("collageName").getValue().toString();
-                String hscRoll = dataSnapshot.child("hscRoll").getValue().toString();
-                String hscReg = dataSnapshot.child("hscReg").getValue().toString();
-                String hscGroup = dataSnapshot.child("hscGroup").getValue().toString();
-                String hscResult = dataSnapshot.child("hscResult").getValue().toString();
-                String hscBoard = dataSnapshot.child("hscBoard").getValue().toString();
-                String hscSession = dataSnapshot.child("hscSession").getValue().toString();
-                String hscPassingYear = dataSnapshot.child("hscPassingYear").getValue().toString();
+                        String collageName = dataSnapshot.child("collageName").getValue().toString();
+                        String hscRoll = dataSnapshot.child("hscRoll").getValue().toString();
+                        String hscReg = dataSnapshot.child("hscReg").getValue().toString();
+                        String hscGroup = dataSnapshot.child("hscGroup").getValue().toString();
+                        String hscResult = dataSnapshot.child("hscResult").getValue().toString();
+                        String hscBoard = dataSnapshot.child("hscBoard").getValue().toString();
+                        String hscSession = dataSnapshot.child("hscSession").getValue().toString();
+                        String hscPassingYear = dataSnapshot.child("hscPassingYear").getValue().toString();
 
-                String uniName = dataSnapshot.child("uniName").getValue().toString();
-                String uniID = dataSnapshot.child("uniID").getValue().toString();
-                String uniSession = dataSnapshot.child("uniSession").getValue().toString();
-                String uniDepartment = dataSnapshot.child("uniDepartment").getValue().toString();
-                String uniPassYear = dataSnapshot.child("uniPassYear").getValue().toString();
+                        String uniName = dataSnapshot.child("uniName").getValue().toString();
+                        String uniID = dataSnapshot.child("uniID").getValue().toString();
+                        String uniSession = dataSnapshot.child("uniSession").getValue().toString();
+                        String uniDepartment = dataSnapshot.child("uniDepartment").getValue().toString();
+                        String uniPassYear = dataSnapshot.child("uniPassYear").getValue().toString();
 
-                tvName.setText(name);
-                tvBirthDate.setText(dateOfBirth);
-                tvSchoolName.setText(schoolName);
-                tvSscRoll.setText(sscRoll);
-                tvSscRegistration.setText(sscRegistration);
-                tvSscGroup.setText(sscGroup);
-                tvSscResult.setText(sscResult);
-                tvSscBoard.setText(sscBoard);
-                tvSscSession.setText(sscSession);
-                tvSscPassingYear.setText(sscPassingYear);
+                        tvName.setText(name);
+                        tvBirthDate.setText(dateOfBirth);
+                        tvSchoolName.setText(schoolName);
+                        tvSscRoll.setText(sscRoll);
+                        tvSscRegistration.setText(sscRegistration);
+                        tvSscGroup.setText(sscGroup);
+                        tvSscResult.setText(sscResult);
+                        tvSscBoard.setText(sscBoard);
+                        tvSscSession.setText(sscSession);
+                        tvSscPassingYear.setText(sscPassingYear);
 
-                tvCollageName.setText(collageName);
-                tvHscRoll.setText(hscRoll);
-                tvHscReg.setText(hscReg);
-                tvHscGroup.setText(hscGroup);
-                tvHscResult.setText(hscResult);
-                tvHscBoard.setText(hscBoard);
-                tvHscSession.setText(hscSession);
-                tvHscPassingYear.setText(hscPassingYear);
+                        tvCollageName.setText(collageName);
+                        tvHscRoll.setText(hscRoll);
+                        tvHscReg.setText(hscReg);
+                        tvHscGroup.setText(hscGroup);
+                        tvHscResult.setText(hscResult);
+                        tvHscBoard.setText(hscBoard);
+                        tvHscSession.setText(hscSession);
+                        tvHscPassingYear.setText(hscPassingYear);
 
-                tvUniName.setText(uniName);
-                tvUniID.setText(uniID);
-                tvUniDepartment.setText(uniDepartment);
-                tvUniSession.setText(uniSession);
-                tvUniPassYear.setText(uniPassYear);
+                        tvUniName.setText(uniName);
+                        tvUniID.setText(uniID);
+                        tvUniDepartment.setText(uniDepartment);
+                        tvUniSession.setText(uniSession);
+                        tvUniPassYear.setText(uniPassYear);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Toast.makeText(getApplicationContext(),"Something is wrong",Toast.LENGTH_LONG).show();
+
+                    }
+                });
+
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(getApplicationContext(),"Something is wrong",Toast.LENGTH_LONG).show();
 
             }
         });
+
+
+
 
     }
 }

@@ -18,14 +18,14 @@ import android.widget.LinearLayout;
 
 import com.example.explorer.vid.nav.activity.AboutActivity;
 import com.example.explorer.vid.R;
-import com.example.explorer.vid.nav.activity.SendDataActivity;
-import com.example.explorer.vid.nav.activity.SenderSelectActivity;
+import com.example.explorer.vid.nav.activity.InstituteActivity;
 import com.example.explorer.vid.nav.activity.SettingsActivity;
 import com.example.explorer.vid.nav.activity.FeedbackActivity;
-import com.example.explorer.vid.start.activity.CheckingActivity;
 import com.example.explorer.vid.start.activity.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import static com.example.explorer.vid.start.activity.LoginActivity.EXTRA_MAIL;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -40,6 +40,9 @@ public class HomeActivity extends AppCompatActivity
         mAuth = FirebaseAuth.getInstance();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Intent intent = getIntent();
+        String email = intent.getStringExtra(EXTRA_MAIL);
 
 
         DrawerLayout drawer =  findViewById(R.id.drawer_layout);
@@ -57,7 +60,7 @@ public class HomeActivity extends AppCompatActivity
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
         if (currentUser == null) {
-            Intent intent = new Intent(getApplicationContext(),CheckingActivity.class);
+            Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
             startActivity(intent);
             finish();
 
@@ -148,7 +151,7 @@ public class HomeActivity extends AppCompatActivity
             startActivity(intent);
         }
         else if (id == R.id.nav_send_data) {
-            Intent intent = new Intent(HomeActivity.this,SenderSelectActivity.class);
+            Intent intent = new Intent(HomeActivity.this,InstituteActivity.class);
             startActivity(intent);
         }
         //-------------------------------------------------------------------------------------------website link

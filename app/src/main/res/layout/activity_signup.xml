@@ -1,34 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Wheat"
-    android:orientation="horizontal"
-    android:theme="@style/Theme.Design.Light.NoActionBar"
+    android:orientation="vertical"
+    android:background="@color/WhiteSmoke"
     tools:context="com.example.explorer.vid.start.activity.SignupActivity">
 
 
-
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        >
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center_vertical"
-            android:layout_marginBottom="50dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            >
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:src="@drawable/ict"
-                android:contentDescription="@string/todo" />
+            android:layout_height="150dp"
+            android:layout_marginBottom="30dp"
+            android:padding="10dp"
+            android:src="@drawable/ict"
+            android:layout_margin="20dp"
+            android:layout_gravity="top"/>
 
-
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_gravity="center"
+        app:cardElevation="2dp"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="5dp"
+        android:padding="10dp">
 
             <!-- Email -->
             <EditText
@@ -36,30 +40,39 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/email"
-                android:textStyle="bold"
+                android:textColor="@color/Teal"
+                android:textColorHint="@color/md_green_400"
+                android:layout_gravity="top"
                 android:inputType="textEmailAddress"
                 android:layout_marginTop="15dp"
-                android:drawableStart="@drawable/ic_mail"/>
+                android:padding="20dp"
+                android:drawableStart="@drawable/ic_email_black_24dp"/>
 
             <!-- Password -->
-
             <EditText
                 android:id="@+id/passwordId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:hint="Enter Password"
-                android:textStyle="bold"
+                android:textColor="@color/Teal"
+                android:textColorHint="@color/md_green_400"
+                android:padding="20dp"
                 android:inputType="textPassword"
-                android:drawableLeft="@drawable/ic_pass"
+                android:drawableStart="@drawable/ic_lock_black_24dp"
                 />
+
             <EditText
                 android:id="@+id/confirmPasswordId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
                 android:hint="@string/confirm_password"
-                android:textStyle="bold"
+                android:textColor="@color/Teal"
+                android:textColorHint="@color/md_green_400"
+                android:padding="20dp"
                 android:inputType="textPassword"
-                android:drawableStart="@drawable/ic_pass"
+                android:drawableStart="@drawable/ic_lock_black_24dp"
                 />
 
             <ProgressBar
@@ -69,18 +82,18 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 />
+</android.support.v7.widget.CardView>
 
-
-            <!-- Sign Up -->
+    <!-- Sign Up -->
             <android.support.v7.widget.CardView
                 android:id="@+id/SignupId"
                 android:onClick="SignUp"
-                android:layout_width="145dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                app:cardCornerRadius="25dp"
-                android:layout_marginBottom="50dp"
-                app:cardBackgroundColor="@color/md_blue_400"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="5dp"
+                app:cardBackgroundColor="@color/md_blue_500"
                 android:layout_gravity="center"
                 >
                 <TextView
@@ -88,13 +101,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/sign_up"
-                    android:textColor="#000000"
+                    android:textColor="@color/White"
                     android:textSize="25sp"
-                    android:textStyle="bold"
                     android:gravity="center"
-                    />
+                    android:padding="10dp"/>
             </android.support.v7.widget.CardView>
-        </LinearLayout>
 
 
 </LinearLayout>
+
+</ScrollView>

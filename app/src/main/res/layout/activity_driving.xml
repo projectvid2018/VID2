@@ -5,44 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     tools:context=".vid.Activity.DrivingActivity"
-    android:background="@color/Wheat"
+    android:background="@color/WhiteSmoke"
     android:orientation="vertical">
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/passportPageId"
-        android:layout_gravity="top"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        card_view:cardElevation="15dp"
-        card_view:cardCornerRadius="0dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:background="@color/Tomato"
-            >
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/drive"
-                android:contentDescription="@string/todo" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="70dp"
-                android:text="@string/driving"
-                android:textSize="30sp"
-                android:padding="10dp"
-                android:gravity="center_vertical"
-                android:textColor="@color/White"
-                android:textStyle="bold"/>
-
-
-        </LinearLayout>
-
-
-    </android.support.v7.widget.CardView>
 
 
     <ScrollView

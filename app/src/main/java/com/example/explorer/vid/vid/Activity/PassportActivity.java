@@ -11,6 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.explorer.vid.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,7 +29,8 @@ public class PassportActivity extends AppCompatActivity {
     private TextView tvContactName, tvRelation,tvContactAddress ;
     private TextView tvContactTelephone;
 
-    private DatabaseReference mRef;
+    private DatabaseReference mRef, mDatabase;
+    private FirebaseUser current_user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,54 +56,70 @@ public class PassportActivity extends AppCompatActivity {
         tvContactAddress = findViewById(R.id.contactAddressID);
         tvContactTelephone = findViewById(R.id.telephoneNoID);
 
-        mRef = FirebaseDatabase.getInstance().getReference().child("Member").child("1234567890").child("Passport");
+        current_user = FirebaseAuth.getInstance().getCurrentUser();
+        String user_id = current_user.getUid();
 
+        mDatabase = FirebaseDatabase.getInstance().getReference("Registered_user/"+user_id);
 
-        mRef.addValueEventListener(new ValueEventListener() {
+        mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String user_nid = dataSnapshot.child("userNID").getValue().toString();
+                mRef = FirebaseDatabase.getInstance().getReference().child("Member").child(user_nid).child("Passport");
+                mRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                String surname = dataSnapshot.child("sureName").getValue().toString();
-                String givenName = dataSnapshot.child("givenName").getValue().toString();
-                String dateOfBirth = dataSnapshot.child("dateOfBirth").getValue().toString();
-                String sex = dataSnapshot.child("sex").getValue().toString();
-                String dateOfIssue = dataSnapshot.child("dateOfIssue").getValue().toString();
-                String dateOfExpiry = dataSnapshot.child("dateOfExpiry").getValue().toString();
-                String PassportPersonalNumber = dataSnapshot.child("PassportPersonalNumber").getValue().toString();
-                String name = dataSnapshot.child("sureName").getValue().toString();
-                String fatherName = dataSnapshot.child("fatherName").getValue().toString();
-                String motherName = dataSnapshot.child("motherName").getValue().toString();
-                String spouseOrHusbendName = dataSnapshot.child("spouseOrHusbendName").getValue().toString();
-                String permanentAddress = dataSnapshot.child("permanentAddress").getValue().toString();
-                String emergencyContact = dataSnapshot.child("emergencyContact").getValue().toString();
-                String relashionship = dataSnapshot.child("relashionship").getValue().toString();
-                String contactAddress = dataSnapshot.child("contactAddress").getValue().toString();
-                String contactTelephone = dataSnapshot.child("contactTelephone").getValue().toString();
+                        String surname = dataSnapshot.child("sureName").getValue().toString();
+                        String givenName = dataSnapshot.child("givenName").getValue().toString();
+                        String dateOfBirth = dataSnapshot.child("dateOfBirth").getValue().toString();
+                        String sex = dataSnapshot.child("sex").getValue().toString();
+                        String dateOfIssue = dataSnapshot.child("dateOfIssue").getValue().toString();
+                        String dateOfExpiry = dataSnapshot.child("dateOfExpiry").getValue().toString();
+                        String PassportPersonalNumber = dataSnapshot.child("PassportPersonalNumber").getValue().toString();
+                        String name = dataSnapshot.child("sureName").getValue().toString();
+                        String fatherName = dataSnapshot.child("fatherName").getValue().toString();
+                        String motherName = dataSnapshot.child("motherName").getValue().toString();
+                        String spouseOrHusbendName = dataSnapshot.child("spouseOrHusbendName").getValue().toString();
+                        String permanentAddress = dataSnapshot.child("permanentAddress").getValue().toString();
+                        String emergencyContact = dataSnapshot.child("emergencyContact").getValue().toString();
+                        String relashionship = dataSnapshot.child("relashionship").getValue().toString();
+                        String contactAddress = dataSnapshot.child("contactAddress").getValue().toString();
+                        String contactTelephone = dataSnapshot.child("contactTelephone").getValue().toString();
 
-                tvSurname.setText(surname);
-                tvGivenName.setText(givenName);
-                tvBirthDate.setText(dateOfBirth);
-                tvSex.setText(sex);
-                tvIssueDate.setText(dateOfIssue);
-                tvExpiryDate.setText(dateOfExpiry);
-                tvPersonalNo.setText(PassportPersonalNumber);
-                tvName.setText(name);
-                tvFatherName.setText(fatherName);
-                tvMotherName.setText(motherName);
-                tvSpouseName.setText(spouseOrHusbendName);
-                tvPermanentAddress.setText(permanentAddress);
-                tvContactName.setText(emergencyContact);
-                tvRelation.setText(relashionship);
-                tvContactAddress.setText(contactAddress);
-                tvContactTelephone.setText(contactTelephone);
+                        tvSurname.setText(surname);
+                        tvGivenName.setText(givenName);
+                        tvBirthDate.setText(dateOfBirth);
+                        tvSex.setText(sex);
+                        tvIssueDate.setText(dateOfIssue);
+                        tvExpiryDate.setText(dateOfExpiry);
+                        tvPersonalNo.setText(PassportPersonalNumber);
+                        tvName.setText(name);
+                        tvFatherName.setText(fatherName);
+                        tvMotherName.setText(motherName);
+                        tvSpouseName.setText(spouseOrHusbendName);
+                        tvPermanentAddress.setText(permanentAddress);
+                        tvContactName.setText(emergencyContact);
+                        tvRelation.setText(relashionship);
+                        tvContactAddress.setText(contactAddress);
+                        tvContactTelephone.setText(contactTelephone);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Toast.makeText(getApplicationContext(),"Something is wrong",Toast.LENGTH_LONG).show();
+
+                    }
+                });
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(getApplicationContext(),"Something is wrong",Toast.LENGTH_LONG).show();
 
             }
         });
+
+
 
     }
 

@@ -10,6 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.explorer.vid.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,9 +23,8 @@ public class HajjActivity extends AppCompatActivity {
 
     private TextView tvName ;
     private TextView tvHajjRegNo, tvHajjFlightNo, tvHajjSession  ;
-    String u_nid = "1234567890";
-
-    private DatabaseReference mRef;
+    private DatabaseReference mRef, mDatabase;
+    private FirebaseUser current_user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,32 +38,50 @@ public class HajjActivity extends AppCompatActivity {
         tvHajjSession = findViewById(R.id.hajjSessionId);
 
 
-        mRef = FirebaseDatabase.getInstance().getReference().child("Member").child(u_nid).child("Hajj");
+        current_user = FirebaseAuth.getInstance().getCurrentUser();
+        String user_id = current_user.getUid();
 
-
-        mRef.addValueEventListener(new ValueEventListener() {
+        mDatabase = FirebaseDatabase.getInstance().getReference("Registered_user/"+user_id);
+        mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String user_nid = dataSnapshot.child("userNID").getValue().toString();
+                mRef = FirebaseDatabase.getInstance().getReference().child("Member").child(user_nid).child("Hajj");
 
-                String name = dataSnapshot.child("name").getValue().toString();
-                String hajjRegno = dataSnapshot.child("hajjRegno").getValue().toString();
-                String hajjFlightno = dataSnapshot.child("hajjFlightno").getValue().toString();
-                String hajjSession = dataSnapshot.child("hajjSession").getValue().toString();
+                mRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        String name = dataSnapshot.child("name").getValue().toString();
+                        String hajjRegno = dataSnapshot.child("hajjRegno").getValue().toString();
+                        String hajjFlightno = dataSnapshot.child("hajjFlightno").getValue().toString();
+                        String hajjSession = dataSnapshot.child("hajjSession").getValue().toString();
 
 
-                tvName.setText(name);
-                tvHajjRegNo.setText(hajjRegno);
-                tvHajjFlightNo.setText(hajjFlightno);
-                tvHajjSession.setText(hajjSession);
+                        tvName.setText(name);
+                        tvHajjRegNo.setText(hajjRegno);
+                        tvHajjFlightNo.setText(hajjFlightno);
+                        tvHajjSession.setText(hajjSession);
 
 
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Toast.makeText(getApplicationContext(),"Something is wrong",Toast.LENGTH_LONG).show();
+
+                    }
+                });
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(getApplicationContext(),"Something is wrong",Toast.LENGTH_LONG).show();
 
             }
         });
+
+
+
+
 
 
 

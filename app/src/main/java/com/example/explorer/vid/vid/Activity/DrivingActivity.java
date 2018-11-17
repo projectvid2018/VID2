@@ -10,6 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.explorer.vid.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,9 +23,8 @@ public class DrivingActivity extends AppCompatActivity {
     private TextView tvName, tvBirthDate,tvBloodGroup,tvVehicleId ;
     private TextView tvFatherName,tvPresentAddress,tvDrivingLicenseNo  ;
     private TextView tvDrivingLicenseCategory,tvDrivingLicenseIssue,tvDrivingLicenseEnd  ;
-
-    private DatabaseReference mRef;
-    String u_nid = "1234567890";
+    private DatabaseReference mRef, mDatabase;
+    private FirebaseUser current_user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,46 +44,62 @@ public class DrivingActivity extends AppCompatActivity {
         tvDrivingLicenseEnd = findViewById(R.id.drivingLicenseEndId);
         tvVehicleId = findViewById(R.id.dVehicleId);
 
-        mRef = FirebaseDatabase.getInstance().getReference().child("Member").child(u_nid).child("Driving");
+        current_user = FirebaseAuth.getInstance().getCurrentUser();
+        String user_id = current_user.getUid();
 
+        mDatabase = FirebaseDatabase.getInstance().getReference("Registered_user/"+user_id);
 
-        mRef.addValueEventListener(new ValueEventListener() {
+        mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String user_nid = dataSnapshot.child("userNID").getValue().toString();
+                mRef = FirebaseDatabase.getInstance().getReference().child("Member").child(user_nid).child("Driving");
+                mRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
 
-                String name = dataSnapshot.child("name").getValue().toString();
-                String dateOfBirth = dataSnapshot.child("dateOfBirth").getValue().toString();
-                String bloodGroup = dataSnapshot.child("bloodGroup").getValue().toString();
-                String fatherOrHusbend = dataSnapshot.child("fatherOrHusbend").getValue().toString();
+                        String name = dataSnapshot.child("name").getValue().toString();
+                        String dateOfBirth = dataSnapshot.child("dateOfBirth").getValue().toString();
+                        String bloodGroup = dataSnapshot.child("bloodGroup").getValue().toString();
+                        String fatherOrHusbend = dataSnapshot.child("fatherOrHusbend").getValue().toString();
 
-                String presentAddress = dataSnapshot.child("presentAddress").getValue().toString();
-                String drivingLicenseNo = dataSnapshot.child("drivingLicenseNo").getValue().toString();
-                String drivinglicensecategory = dataSnapshot.child("drivinglicensecategory").getValue().toString();
-                String drivingLicenseIssue = dataSnapshot.child("drivingLicenseIssue").getValue().toString();
-                String drivinglicenseEnd = dataSnapshot.child("drivinglicenseEnd").getValue().toString();
-                String vehicleId = dataSnapshot.child("vehicleId").getValue().toString();
+                        String presentAddress = dataSnapshot.child("presentAddress").getValue().toString();
+                        String drivingLicenseNo = dataSnapshot.child("drivingLicenseNo").getValue().toString();
+                        String drivinglicensecategory = dataSnapshot.child("drivinglicensecategory").getValue().toString();
+                        String drivingLicenseIssue = dataSnapshot.child("drivingLicenseIssue").getValue().toString();
+                        String drivinglicenseEnd = dataSnapshot.child("drivinglicenseEnd").getValue().toString();
+                        String vehicleId = dataSnapshot.child("vehicleId").getValue().toString();
 
 
-                tvName.setText(name);
-                tvBirthDate.setText(dateOfBirth);
-                tvBloodGroup.setText(bloodGroup);
-                tvFatherName.setText(fatherOrHusbend);
-                tvPresentAddress.setText(presentAddress);
+                        tvName.setText(name);
+                        tvBirthDate.setText(dateOfBirth);
+                        tvBloodGroup.setText(bloodGroup);
+                        tvFatherName.setText(fatherOrHusbend);
+                        tvPresentAddress.setText(presentAddress);
 
-                tvDrivingLicenseNo.setText(drivingLicenseNo);
-                tvDrivingLicenseCategory.setText(drivinglicensecategory);
-                tvDrivingLicenseIssue.setText(drivingLicenseIssue);
-                tvDrivingLicenseEnd.setText(drivinglicenseEnd);
-                tvVehicleId.setText(vehicleId);
+                        tvDrivingLicenseNo.setText(drivingLicenseNo);
+                        tvDrivingLicenseCategory.setText(drivinglicensecategory);
+                        tvDrivingLicenseIssue.setText(drivingLicenseIssue);
+                        tvDrivingLicenseEnd.setText(drivinglicenseEnd);
+                        tvVehicleId.setText(vehicleId);
+
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Toast.makeText(getApplicationContext(),"Something is wrong",Toast.LENGTH_LONG).show();
+
+                    }
+                });
 
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(getApplicationContext(),"Something is wrong",Toast.LENGTH_LONG).show();
 
             }
         });
+
 
 
     }

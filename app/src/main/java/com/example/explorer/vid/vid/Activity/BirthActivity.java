@@ -10,6 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.explorer.vid.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,8 +24,9 @@ public class BirthActivity extends AppCompatActivity {
 
     private TextView tvName, tvBirthDate,tvSex ,tvBirthPlace;
     private TextView tvFatherName,tvMotherName,tvPermanentAddress  ;
+    private DatabaseReference mRef, mDatabase;
+    private FirebaseUser current_user;
 
-    private DatabaseReference mRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +42,25 @@ public class BirthActivity extends AppCompatActivity {
         tvMotherName = findViewById(R.id.bMotherNameID);
         tvPermanentAddress = findViewById(R.id.bPermanentAddressID);
 
-        mRef = FirebaseDatabase.getInstance().getReference().child("Member").child("1234567890").child("Personal");
+        current_user = FirebaseAuth.getInstance().getCurrentUser();
+        String user_id = current_user.getUid();
+
+        mDatabase = FirebaseDatabase.getInstance().getReference("Registered_user/"+user_id);
+
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String user_nid = dataSnapshot.child("userNID").getValue().toString();
+                mRef = FirebaseDatabase.getInstance().getReference().child("Member").child(user_nid).child("Personal");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
 
 
         mRef.addValueEventListener(new ValueEventListener() {

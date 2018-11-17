@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".nav.activity.InstituteActivity">
+
+    <SearchView
+        android:id="@+id/searchViewInstituteId"
+        android:queryHint="Enter Institute name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </SearchView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/LightGrey"
+        />
+
+    <ListView
+        android:id="@+id/instituteListView"
+        android:listSelector="@color/GhostWhite"
+        android:clickable="true"
+        android:divider="@color/LightGrey"
+        android:dividerHeight="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true">
+
+    </ListView>
+
+</LinearLayout>

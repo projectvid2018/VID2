@@ -37,7 +37,7 @@ public class SplashScreen extends Activity implements Runnable
         }
         finally
         {
-            startActivity(new Intent(SplashScreen.this, HomeActivity.class));
+            startActivity(new Intent(SplashScreen.this, LoginActivity.class));
 
             finish();
         }

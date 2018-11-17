@@ -8,6 +8,7 @@ import android.support.v7.widget.CardView;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.explorer.vid.R;
@@ -19,9 +20,13 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
+    public static final String EXTRA_MAIL = "email";
+
     private EditText editTextEmail;
     private EditText editTextPassword;
     private CardView cardView;
+    private ProgressBar progressBarLogIn;
+
 
     private FirebaseAuth firebaseAuth;
     @Override
@@ -32,68 +37,66 @@ public class LoginActivity extends AppCompatActivity {
         cardView = findViewById(R.id.cardViewIdLogIn);
         editTextEmail = findViewById(R.id.logInEmailId);
         editTextPassword = findViewById(R.id.logInPasswordId);
+        progressBarLogIn = findViewById(R.id.loginProgressbarId);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
     }
 
 
-    public void LoginActivity(View view) {
-
-        String email = editTextEmail.getText().toString().trim();
+    public void loginActivity(View view) {
+        progressBarLogIn.setVisibility(View.VISIBLE);
+        final String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
 
         if(email.isEmpty()){
             editTextEmail.setError("please insert email");
             editTextEmail.requestFocus();
+            progressBarLogIn.setVisibility(View.GONE);
             return;
+
         }
         else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             editTextEmail.setError("please Insert valid email");
             editTextEmail.requestFocus();
+            progressBarLogIn.setVisibility(View.GONE);
             return;
         }
-
-
         //password
         else if(password.isEmpty()){
             editTextPassword.setError("please insert password");
             editTextPassword.requestFocus();
+            progressBarLogIn.setVisibility(View.GONE);
             return;
         }
 
         else {
-
-
-            firebaseAuth.signInWithEmailAndPassword(email,password)
-                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-
                             if(task.isSuccessful()){
-                                Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+                                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+                                progressBarLogIn.setVisibility(View.GONE);
+                                intent.putExtra(EXTRA_MAIL,email);
                                 startActivity(intent);
-                                //finish();
-
-                            }else {
+                                finish();
+                            }
+                            else {
                                 Toast.makeText(getApplicationContext(),"Please enter correct password or email.",Toast.LENGTH_LONG).show();
 
                             }
                         }
                     });
-
-
         }
-
     }
 
-    public void SignUp(View view) {
-        Intent intent = new Intent(LoginActivity.this,SignupActivity.class);
+    public void AddNewUser(View view) {
+        Intent intent = new Intent(getApplicationContext(),CheckingActivity.class);
         startActivity(intent);
     }
 
 
-    public void forgotpass(View view) {
+    public void ForgotPassword(View view) {
         Intent intent = new Intent(getApplicationContext(),ForgotpassActivity.class);
         startActivity(intent);
     }

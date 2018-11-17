@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.explorer.vid">
 
@@ -14,8 +15,11 @@
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".start.activity.SplashScreen">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".start.activity.SplashScreen"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,11 +29,15 @@
         <activity
             android:name=".vid.Activity.NidActivity"
             android:label="@string/nid"
-            android:parentActivityName=".vid.Activity.HomeActivity" />
+            android:parentActivityName=".vid.Activity.HomeActivity"
+            tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".vid.Activity.HomeActivity"
-            android:label="Home" />
-        <activity android:name=".start.activity.CheckingActivity" />
+            android:label="Home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".start.activity.CheckingActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".vid.Activity.InfoActivity"
             android:label="@string/information"
@@ -53,11 +61,13 @@
         <activity
             android:name=".vid.Activity.PropertiesActivity"
             android:label="@string/properties"
-            android:parentActivityName=".vid.Activity.HomeActivity" />
+            android:parentActivityName=".vid.Activity.HomeActivity"
+            tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".vid.Activity.LawActivity"
             android:label="@string/law"
-            android:parentActivityName=".vid.Activity.HomeActivity" />
+            android:parentActivityName=".vid.Activity.HomeActivity"
+            tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".vid.Activity.EcActivity"
             android:label="@string/ec"
@@ -93,14 +103,22 @@
         <activity
             android:name=".vid.Activity.OthersActivity"
             android:label="@string/others"
-            android:parentActivityName=".vid.Activity.HomeActivity" />
-        <activity android:name=".start.activity.LoginActivity" />
-        <activity android:name=".start.activity.SignupActivity" />
-        <activity android:name=".start.activity.ForgotpassActivity" />
+            android:parentActivityName=".vid.Activity.HomeActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".start.activity.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".start.activity.SignupActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".start.activity.ForgotpassActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".vid.Activity.BirthActivity"
             android:label="@string/birth"
-            android:parentActivityName=".vid.Activity.HomeActivity" />
+            android:parentActivityName=".vid.Activity.HomeActivity"
+            tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".nav.activity.SettingsActivity"
             android:label="@string/title_activity_settings"
@@ -110,14 +128,21 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.explorer.vid.vid.Activity.HomeActivity" />
         </activity>
-        <activity android:name=".nav.activity.FeedbackActivity" />
+        <activity
+            android:name=".nav.activity.FeedbackActivity"
+            android:label="Feedback"
+            android:parentActivityName=".vid.Activity.HomeActivity" />
         <activity
             android:name=".nav.activity.AboutActivity"
             android:label="@string/about"
             android:parentActivityName=".vid.Activity.HomeActivity" />
-        <activity android:name=".nav.activity.SendDataActivity" />
-        <activity android:name=".nav.activity.SenderSelectActivity"
-            android:label="Select data"></activity>
+        <activity
+            android:name=".nav.activity.InstituteActivity"
+            android:label="Institute name"
+            android:parentActivityName=".vid.Activity.HomeActivity"
+            >
+
+        </activity>
     </application>
 
 </manifest>
