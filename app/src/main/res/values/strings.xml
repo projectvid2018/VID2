@@ -168,6 +168,7 @@
     <string name="forgot_password">Forgot password?</string>
     <string name="password">Password</string>
     <string name="institute_name">Institute name</string>
+    <string name="want_to_your_birth_certificate_and_education">Want to your Birth certificate and Education !</string>
 
     <string-array name="institute_name">
         <item>Ahsanullah University of Science and Technology</item>
