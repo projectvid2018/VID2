@@ -168,7 +168,9 @@
     <string name="forgot_password">Forgot password?</string>
     <string name="password">Password</string>
     <string name="institute_name">Institute name</string>
-    <string name="want_to_your_birth_certificate_and_education">Want to your Birth certificate and Education !</string>
+    <string name="want_to_access">Want to access</string>
+    <string name="_2_education_certificate">2. Education Certificate</string>
+
 
     <string-array name="institute_name">
         <item>Ahsanullah University of Science and Technology</item>
@@ -188,6 +190,21 @@
         <item>Trust Bank Limited</item>
         <item>University of Dhaka</item>
         <item>Uttara Bank Limited</item>
+
+    </string-array>
+
+    <string-array name="university_name">
+        <item>Ahsanullah University of Science and Technology</item>
+        <item>American International University Bangladesh (AIUB)</item>
+        <item>Bangladesh University of Engineering and Technology</item>
+        <item>BRAC University</item>
+        <item>Daffodil International University</item>
+        <item>East West University</item>
+        <item>Independent University Bangladesh (IUB)</item>
+        <item>Jahangirnagar University</item>
+        <item>North South University (NSU)</item>
+        <item>The University of Asia Pacific</item>
+        <item>University of Dhaka</item>
 
     </string-array>
 

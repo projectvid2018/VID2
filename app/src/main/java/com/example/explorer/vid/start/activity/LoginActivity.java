@@ -77,11 +77,11 @@ public class LoginActivity extends AppCompatActivity {
                             if(task.isSuccessful()){
                                 Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
                                 progressBarLogIn.setVisibility(View.GONE);
-                                intent.putExtra(EXTRA_MAIL,email);
                                 startActivity(intent);
                                 finish();
                             }
                             else {
+                                progressBarLogIn.setVisibility(View.GONE);
                                 Toast.makeText(getApplicationContext(),"Please enter correct password or email.",Toast.LENGTH_LONG).show();
 
                             }

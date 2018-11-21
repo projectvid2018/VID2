@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.explorer.vid">
 
@@ -139,10 +138,8 @@
         <activity
             android:name=".nav.activity.InstituteActivity"
             android:label="Institute name"
-            android:parentActivityName=".vid.Activity.HomeActivity"
-            >
-
-        </activity>
+            android:parentActivityName=".vid.Activity.HomeActivity"></activity>
+        <activity android:name=".nav.activity.SettingActivity"></activity>
     </application>
 
 </manifest>
